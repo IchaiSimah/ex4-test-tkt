@@ -3,12 +3,13 @@
 
 class BattleCard : public Card{
     public:
-    virtual BattleCard() const;
+    BattleCard(const std::string& name,const int force,const int loot, const int damage);
     ~BattleCard() = default;
-    void applyEncounter(&Player) override;
+    virtual void applyEncounter(Player& player);
+    
     private:
     int m_force;
     int m_loot;
     int m_damage;
 
-}
+};
