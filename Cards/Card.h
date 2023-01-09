@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include "Player.h"
-#include "utilities.h"
+#include "../Players/Player.h"
+#include "../utilities.h"
 
 #ifndef EX4_Card_H
 #define EX4_Card_H
@@ -22,9 +22,9 @@
 */
 class Card {
 public:
-virtual Card Card(std::string name) const;
-virtual Player applyEncounter(&Player);
-
+Card(const std::string name);
+virtual void applyEncounter(Player& player);
+bool isDragon() const;
 private:
 std::string m_name;
 };

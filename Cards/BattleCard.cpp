@@ -1,17 +1,21 @@
 #include "BattleCard.h"
 
-bool isDragon(){
-    if(name == "Dragon") return true;
-    else return false;
-}
 
-void BattleCard::applyEncounter(&Player player){
-    printMonsterDetails(std::cout, BattleCard.m_force, BattleCard.m_damage, BattleCard.m_loot, isDragon(BattleCard.m_name));
-    if(player.getForce() + player.getLevel() >= BattleCard.m_force){
+
+BattleCard::BattleCard(const std::string &name, const int force, const int loot, const int damage): Card(name),
+                                                                m_force(force),
+                                                                m_damage(damage),
+                                                                m_loot(loot)
+{}
+
+
+void BattleCard::applyEncounter(Player& player){
+    printMonsterDetails(std::cout, m_force, m_damage, m_loot, isDragon());
+    if(player.getForce() + player.getLevel() >= m_force){
         player.addLevel();
-        player.addLoot(BattleCard.m_loot);
+        player.addCoins(m_loot);
     }
     else{
-        player.removeHp(BattleCard.m_damage);
+        player.addHp(m_damage);
     }
 }
