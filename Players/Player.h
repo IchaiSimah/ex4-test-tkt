@@ -15,9 +15,8 @@ class Player{
 private:
     std::string m_name;
     int m_level;
-    int m_force;
-
 protected:
+    int m_force;
     int m_HP;
     int m_coins;
 
@@ -25,13 +24,13 @@ public:
     Player(std::string& name);
     void addLevel();
     void addForce(int forceToAdd);
-    void addHp(int hpToAdd);
+    virtual void addHp(int hpToAdd);
     void removeHp(int hpToRemove);
-    void addCoins(int coinsToAdd);
+    virtual void addCoins(int coinsToAdd);
 
     std::string getName()const;
     int getLevel() const;
-    int getForce() const;
+    virtual int getForce() const;
     int getHp() const;
     int getCoins() const;
     bool isKnockedOut()const;
