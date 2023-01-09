@@ -34,7 +34,7 @@ public:
     int getHp() const;
     int getCoins() const;
     bool isKnockedOut()const;
-    bool canPay(int price)const;
+    bool pay(int price);
     bool win()const;
     virtual void printPlayerInfo(std::ostream& os) const = 0;
     protected:

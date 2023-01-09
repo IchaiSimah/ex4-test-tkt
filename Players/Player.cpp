@@ -58,8 +58,15 @@ Player::Player(std::string &name):  m_name(name),
     bool Player::isKnockedOut()const{
         return !m_HP;
     }
-    bool Player::canPay(int price)const{
-        return price<= m_coins;
+    bool Player::pay(int price){
+        if(price < 0){
+            return true;
+        }
+        if(price <= m_coins){
+            m_coins -= price;
+            return true;
+        }
+        return false;
     }
     bool Player::win()const{
         return m_level == MAX_LEVEL;
