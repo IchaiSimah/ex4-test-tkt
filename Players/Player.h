@@ -15,9 +15,8 @@ class Player{
 private:
     std::string m_name;
     int m_level;
-    int m_force;
-
 protected:
+    int m_force;
     int m_HP;
     int m_coins;
 
