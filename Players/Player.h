@@ -2,7 +2,9 @@
 #define PLAYER_H_
 #include <string>
 
-
+const std::string NINJA = "Ninja";
+const std::string HEALER = "Healer";
+const std::string WARRIOR = "Warrior";
 const int DEFAULT_STARTING_LEVEL = 0;
 const int DEFAULT_STARTING_FORCE = 0;
 const int DEFAULT_MAX_HP = 100;
@@ -14,6 +16,8 @@ private:
     std::string m_name;
     int m_level;
     int m_force;
+
+protected:
     int m_HP;
     int m_coins;
 
@@ -28,7 +32,9 @@ public:
     std::string getName()const;
     int getLevel() const;
     int getForce() const;
-    int isKnockedOut()const;
+    int getHp() const;
+    int getCoins() const;
+    bool isKnockedOut()const;
     bool canPay(int price)const;
     bool win()const;
     virtual void printPlayerInfo(std::ostream& os) const = 0;

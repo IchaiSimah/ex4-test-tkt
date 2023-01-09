@@ -34,7 +34,9 @@ Player::Player(std::string &name):  m_name(name),
     }
     
     void Player::addCoins(int coinsToAdd){
-        m_coins += coinsToAdd;
+        if(coinsToAdd>0){
+            m_coins += coinsToAdd;
+        }
     }
 
     int Player::getLevel() const{
@@ -47,7 +49,13 @@ Player::Player(std::string &name):  m_name(name),
     std::string Player::getName()const{
         return m_name;
     }
-    int Player::isKnockedOut()const{
+    int Player::getHp() const{
+        return m_HP;
+    }
+    int Player::getCoins() const{
+        return m_coins;
+    }
+    bool Player::isKnockedOut()const{
         return !m_HP;
     }
     bool Player::canPay(int price)const{
