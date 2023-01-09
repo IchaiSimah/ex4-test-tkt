@@ -1,16 +1,12 @@
-#include "Card.h"
+#include "BattleCard.h"
 
 
-class Dragon : public Card{
+class Dragon : public BattleCard{
     public:
-    Dragon() const;
+    Dragon();
     ~Dragon() = default;
-    Player applyEncounter(&Player) override;
+    void applyEncounter(Player& player) override;
     const int DEFAULT_DRAGON_FORCE = 25;
     const int DEFAULT_DRAGON_LOOT = 1000;
     const int MAX_HEALTH_POINTS = 100;
-    private:
-    int m_force;
-    int m_loot;
-    int m_damage;
-}
+};

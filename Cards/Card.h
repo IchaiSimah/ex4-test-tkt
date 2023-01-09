@@ -24,8 +24,7 @@ class Card {
 public:
 Card(const std::string name);
 virtual void applyEncounter(Player& player);
-bool isDragon() const;
-private:
+protected:
 std::string m_name;
 };
 
