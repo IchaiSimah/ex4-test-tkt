@@ -6,8 +6,7 @@ Merchant::Merchant():Card("Merchant"),
 {}
 
 void Merchant :: applyEncounter(Player &player){
-    printCardDetails(std::cout, m_name);
-    printEndOfCardDetails(std::cout);
+    printCard();
     printMerchantInitialMessageForInteractiveEncounter(std::cout, player.getName(), player.getCoins());
     std::string str;
     std::getline(std::cin, str);
@@ -18,25 +17,23 @@ void Merchant :: applyEncounter(Player &player){
         choice=std::stoi(str);
     }
     if(choice==CHOSE_HP){
-        if(player.canPay(PRICE_FOR_HP)){
+        if(player.pay(PRICE_FOR_HP)){
         player.addHp(m_HealthBoost);
-        player.pay(PRICE_FOR_HP);
         cost = PRICE_FOR_HP;
         }
         else{
             printMerchantInsufficientCoins(std::cout);
-            choice=0;
+            choice=DO_NOTHING;
         }
     }
     else if(choice==CHOSE_FORCE){
-        if(player.canPay(PRICE_FOR_FORCE)){
+        if(player.pay(PRICE_FOR_FORCE)){
             player.addForce(m_ForceBoost);
-            player.pay(PRICE_FOR_FORCE);
             cost=PRICE_FOR_FORCE;
         }
         else{
            printMerchantInsufficientCoins(std::cout);
-           choice=0;
+           choice=DO_NOTHING;
         }
     }
     printMerchantSummary(std::cout, player.getName(), choice, cost);

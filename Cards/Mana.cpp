@@ -6,8 +6,7 @@ Mana :: Mana():Card("Mana"),
 {}
 
 void Mana :: applyEncounter(Player& player){
-    printCardDetails(std::cout, m_name);
-    printEndOfCardDetails(std::cout);
+    printCard();
     if(isHealer(player)){
         player.addHp(m_heal);
     }

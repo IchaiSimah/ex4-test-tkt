@@ -1,4 +1,15 @@
 #include "Dragon.h"
 
-Dragon::Dragon() : Card("Dragon"), m_loot = DEFAULT_DRAGON_LOOT, m_force =DEFAULT_DRAGON_FORCE, m_damage = MAX_HEALTH_POINTS
+Dragon::Dragon(): BattleCard("Dragon", DEFAULT_DRAGON_FORCE, DEFAULT_DRAGON_LOOT, MAX_HEALTH_POINTS)
 {}
+
+void Dragon :: printCard(){
+    printCardDetails(std::cout, m_name);
+    printMonsterDetails(std::cout, m_force, m_damage, m_loot, ISDRAGON);
+    printEndOfCardDetails(std::cout);
+}
+
+void Dragon :: battleLose(Player &player){
+    player.removeHp(m_damage);
+    printLossBattle(player.getName(), m_name);
+}

@@ -5,8 +5,7 @@ Barfight :: Barfight():Card("Barfight"),
 {} 
 
 void Barfight :: applyEncounter(Player& player){
-    printCardDetails(std::cout, m_name);
-    printEndOfCardDetails(std::cout);
+    printCard();
     if( !isWarrior(player) ){
         player.removeHp(m_damage);
     }

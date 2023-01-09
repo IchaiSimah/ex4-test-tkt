@@ -5,8 +5,7 @@ Well :: Well():Card("Well"),
 {}
 
 void Well :: applyEncounter(Player& player){
-    printCardDetails(std::cout, m_name);
-    printEndOfCardDetails(std::cout);
+    printCard();
     if( !isNinja(player) ){
         player.removeHp(m_damage);
     }

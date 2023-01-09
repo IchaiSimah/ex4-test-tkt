@@ -24,6 +24,7 @@ class Card {
 public:
 Card(const std::string name);
 virtual void applyEncounter(Player& player);
+virtual void printCard();
 protected:
 std::string m_name;
 };

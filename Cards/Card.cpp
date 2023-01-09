@@ -3,7 +3,7 @@
 
 Card::Card(const std::string name): m_name(name){};
 
-bool Card::isDragon()const{
-    if(m_name == "Dragon") return true;
-    else return false;
+void Card :: printCard(){
+    printCardDetails(std::cout, m_name);
+    printEndOfCardDetails(std::cout);
 }

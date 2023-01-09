@@ -3,10 +3,10 @@
 
 class Treasure : public Card{
     public:
-    Treasure():Card("Barfight"){} const;
-    Player applyEncounter(&Player) override;
+    Treasure();
+    void applyEncounter(Player& player) override;
     const int DEFAULT_TREASURE_LOOT = 10;
     private:
 
     int m_loot;
-}
+};

@@ -5,8 +5,7 @@ Treasure :: Treasure():Card("Barfight"),
 {}
 
 void Treasure :: applyEncounter(Player& player){
-    printCardDetails(std::cout, m_name);
-    printEndOfCardDetails(std::cout);
+    printCard();
     player.addCoins(m_loot);
     printTreasureMessage();
 }
