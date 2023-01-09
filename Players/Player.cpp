@@ -20,6 +20,9 @@ Player::Player(std::string &name):  m_name(name),
         m_coins += coinsToAdd;
     }
 
+    int Player::getLevel() const{
+        return m_level;
+    }
     int Player::getForce() const{
         return m_force;
     }

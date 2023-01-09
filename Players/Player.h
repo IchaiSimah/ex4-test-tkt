@@ -23,6 +23,7 @@ public:
     void addHp(int hpToAdd);
     void addCoins(int coinsToAdd);
 
+    int getLevel() const;
     int getForce() const;
     int isKnockedOut()const;
     bool canPay(int price)const;
