@@ -46,6 +46,8 @@ public:
     *          int - number of rounds played
     */
     int getNumberOfRounds() const;
+    private:
+    
 };
 
 

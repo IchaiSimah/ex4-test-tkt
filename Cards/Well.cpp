@@ -1,10 +1,10 @@
 #include "Well.h"
 
-Well :: Well():Card("Well"),
+Well :: Well():Card(WELL),
                 m_damage(WELL_DEFAULT_DAMAGE)
 {}
 
-void Well :: applyEncounter(Player& player){
+void Well :: applyEncounter(Player& player) const {
     printCard();
     if( !isNinja(player) ){
         player.removeHp(m_damage);
@@ -13,7 +13,7 @@ void Well :: applyEncounter(Player& player){
 }
 
 bool isNinja(const Player& player){
-    if(player.getName()=="Ninja"){
+    if(player.getName()==NINJA){
         return true;
     }
     else return false;

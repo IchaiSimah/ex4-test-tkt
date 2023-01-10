@@ -1,11 +1,11 @@
 #include "Mana.h"
 
 
-Mana :: Mana():Card("Mana"),
+Mana :: Mana():Card(MANA),
                 m_heal(DEFAULT_HEALTH_POINTS_ADDED)
 {}
 
-void Mana :: applyEncounter(Player& player){
+void Mana :: applyEncounter(Player& player) const{
     printCard();
     if(isHealer(player)){
         player.addHp(m_heal);
@@ -14,7 +14,7 @@ void Mana :: applyEncounter(Player& player){
 }
 
 bool isHealer(const Player& player){
-    if(player.getName()=="Healer"){
+    if(player.getName()==HEALER){
         return true;
     }
     else return false;

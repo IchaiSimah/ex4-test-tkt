@@ -5,7 +5,7 @@ class Merchant : public Card{
     public:
     Merchant();
     ~Merchant();
-    void applyEncounter(Player &player) override;
+    void applyEncounter(Player &player) const override;
     const int DEFAULT_MERCHANT_HEALTH_BOOST = 1;
     const int DEFAULT_MERCHANT_FORCE_BOOST = 1;
     const int PRICE_FOR_HP = 5;
@@ -13,6 +13,7 @@ class Merchant : public Card{
     const int CHOSE_FORCE = 2;
     const int CHOSE_HP = 1;
     const int DO_NOTHING = 0;
+    const std::string MERCHANT="Merchant";
     private: 
     int m_HealthBoost;
     int m_ForceBoost;

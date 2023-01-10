@@ -1,10 +1,10 @@
 #include "Barfight.h"
 
-Barfight :: Barfight():Card("Barfight"),
+Barfight :: Barfight():Card(BARFIGHT),
                         m_damage(BARFIGHT_DEFAULT_DAMAGE)
 {} 
 
-void Barfight :: applyEncounter(Player& player){
+void Barfight :: applyEncounter(Player& player) const{
     printCard();
     if( !isWarrior(player) ){
         player.removeHp(m_damage);
@@ -12,8 +12,8 @@ void Barfight :: applyEncounter(Player& player){
     printBarfightMessage(isWarrior(player));
 }
 
-bool isWarrior(const Player& player){
-    if(player.getName()=="Warrior"){
+bool isWarrior(const Player& player) {
+    if(player.getName()==WARRIOR){
         return true;
     }
     else return false;

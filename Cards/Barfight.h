@@ -4,8 +4,9 @@
 class Barfight : public Card{
     public:
     Barfight();
-    void applyEncounter(Player& player) override;
+    void applyEncounter(Player& player) const override;
     const int BARFIGHT_DEFAULT_DAMAGE = 10;
+    const std::string BARFIGHT="Barfight";
     private: 
     int m_damage;
 };
