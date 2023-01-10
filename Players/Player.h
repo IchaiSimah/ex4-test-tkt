@@ -21,7 +21,7 @@ protected:
     int m_coins;
 
 public:
-    Player(std::string& name);
+    Player(const std::string& name);
     void addLevel();
     void addForce(int forceToAdd);
     virtual void addHp(int hpToAdd);

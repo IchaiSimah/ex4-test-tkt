@@ -2,7 +2,8 @@
 #define WARRIOR_H_
 #include "Player.h"
 class Warrior : public Player{
-    Warrior(std::string &playerName);
+public:
+    Warrior(const std::string &playerName);
     int getForce() const override;
     void printPlayerInfo(std::ostream& os) const override;
 
