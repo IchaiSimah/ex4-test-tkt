@@ -5,7 +5,6 @@ Well :: Well():Card(WELL),
 {}
 
 void Well :: applyEncounter(Player& player) const {
-    printCard();
     if( !isNinja(player) ){
         player.removeHp(m_damage);
     }

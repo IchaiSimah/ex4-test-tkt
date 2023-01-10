@@ -5,7 +5,6 @@ Treasure :: Treasure():Card(TREASURE),
 {}
 
 void Treasure :: applyEncounter(Player& player)const {
-    printCard();
     player.addCoins(m_loot);
     printTreasureMessage();
 }

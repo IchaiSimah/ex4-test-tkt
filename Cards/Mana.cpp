@@ -6,7 +6,6 @@ Mana :: Mana():Card(MANA),
 {}
 
 void Mana :: applyEncounter(Player& player) const{
-    printCard();
     if(isHealer(player)){
         player.addHp(m_heal);
     }

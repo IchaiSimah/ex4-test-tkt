@@ -5,7 +5,7 @@ class Dragon : public BattleCard{
     public:
     Dragon();
     ~Dragon() = default;
-    void printCard() const override;
+    void printCard(std::ostream& os) const override;
     void battleLose(Player& player) const override;
     const int DEFAULT_DRAGON_FORCE = 25;
     const int DEFAULT_DRAGON_LOOT = 1000;

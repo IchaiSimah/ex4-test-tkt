@@ -7,10 +7,13 @@ BattleCard::BattleCard(const std::string &name, const int force, const int loot,
                                                                 m_damage(damage),
                                                                 m_loot(loot)
 {}
-
+void BattleCard:: printCard(std::ostream& os) const{
+    printCardDetails(os, m_name);
+    printMonsterDetails(os, m_force, m_damage, m_loot, IS_NOT_DRAGON);
+    printEndOfCardDetails(os);
+}
 
 void BattleCard::applyEncounter(Player& player) const{
-    printCard();
     if(player.getForce() + player.getLevel() >= m_force){
         battleWin(player);
     }

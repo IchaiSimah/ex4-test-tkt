@@ -5,7 +5,6 @@ Barfight :: Barfight():Card(BARFIGHT),
 {} 
 
 void Barfight :: applyEncounter(Player& player) const{
-    printCard();
     if( !isWarrior(player) ){
         player.removeHp(m_damage);
     }

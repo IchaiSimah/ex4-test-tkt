@@ -3,10 +3,10 @@
 Dragon::Dragon(): BattleCard(DRAGON, DEFAULT_DRAGON_FORCE, DEFAULT_DRAGON_LOOT, MAX_HEALTH_POINTS)
 {}
 
-void Dragon :: printCard() const{
-    printCardDetails(std::cout, m_name);
-    printMonsterDetails(std::cout, m_force, m_damage, m_loot, ISDRAGON);
-    printEndOfCardDetails(std::cout);
+void Dragon :: printCard(std::ostream& os) const{
+    printCardDetails(os, m_name);
+    printMonsterDetails(os, m_force, m_damage, m_loot, ISDRAGON);
+    printEndOfCardDetails(os);
 }
 
 void Dragon :: battleLose(Player &player) const{
