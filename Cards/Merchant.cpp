@@ -1,16 +1,16 @@
 #include "Merchant.h"
 
-Merchant::Merchant():Card("Merchant"),
+Merchant::Merchant():Card(MERCHANT),
                     m_ForceBoost(DEFAULT_MERCHANT_FORCE_BOOST),
                     m_HealthBoost(DEFAULT_MERCHANT_HEALTH_BOOST)
 {}
 
-void Merchant :: applyEncounter(Player &player){
+void Merchant :: applyEncounter(Player &player) const{
     printCard();
     printMerchantInitialMessageForInteractiveEncounter(std::cout, player.getName(), player.getCoins());
     std::string str;
     std::getline(std::cin, str);
-    int choice =std::stoi(str), cost=0;
+    int choice =std::stoi(str), cost=0; //TODOOOOOOOOOOOOo
     while(choice !=DO_NOTHING && choice !=CHOSE_HP && choice!=CHOSE_FORCE){
         printInvalidInput;
         std::getline(std::cin, str);

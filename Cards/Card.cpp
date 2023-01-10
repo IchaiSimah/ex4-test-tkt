@@ -1,9 +1,9 @@
 #include "Card.h"
 
 
-Card::Card(const std::string name): m_name(name){};
+Card::Card(const std::string& name): m_name(name){};
 
-void Card :: printCard(){
+void Card :: printCard() const{
     printCardDetails(std::cout, m_name);
     printEndOfCardDetails(std::cout);
 }
