@@ -2,7 +2,7 @@
 #include "../utilities.h"
 const int DOUBLE_HEAL = 2;
 
-Healer::Healer(std::string &playerName): Player(playerName){}
+Healer::Healer(const std::string &playerName): Player(playerName){}
 
 void Healer::addHp(int hpToAdd){
         if(hpToAdd > 0){

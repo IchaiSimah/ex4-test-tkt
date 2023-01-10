@@ -4,7 +4,7 @@
 
 class Ninja : public Player{
 public:
-    explicit Ninja(std::string &playerName);
+    explicit Ninja(const std::string &playerName);
     void addCoins(int coinsToAdd) override;
     void printPlayerInfo(std::ostream& os) const override;
 };

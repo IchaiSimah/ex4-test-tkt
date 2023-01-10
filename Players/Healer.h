@@ -2,7 +2,8 @@
 #define HEALER_H_
 #include "Player.h"
 class Healer : public Player{
-    Healer(std::string &playerName);
+public:
+    Healer(const std::string &playerName);
     void addHp(int hpToAdd) override;
     void printPlayerInfo(std::ostream& os) const override;
 

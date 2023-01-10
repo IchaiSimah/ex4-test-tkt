@@ -2,7 +2,7 @@
 #include "../utilities.h"
 const int DOUBLE_STEEL = 2;
 
-Ninja::Ninja(std::string &playerName): Player(playerName){}
+Ninja::Ninja(const std::string &playerName): Player(playerName){}
 
 void Ninja::addCoins(int coinsToAdd){
         if(coinsToAdd > 0){

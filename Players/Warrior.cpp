@@ -2,7 +2,7 @@
 #include "../utilities.h"
 const int DOUBLE_FORCE = 2;
 
-Warrior::Warrior(std::string &playerName): Player(playerName){}
+Warrior::Warrior(const std::string &playerName): Player(playerName){}
 
 int Warrior::getForce() const{
     return (DOUBLE_FORCE * m_force);

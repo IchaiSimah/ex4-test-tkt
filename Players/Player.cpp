@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player(std::string &name):  m_name(name),  
+Player::Player(const std::string &name):  m_name(name),  
                                     m_level(DEFAULT_STARTING_LEVEL),
                                     m_force(DEFAULT_STARTING_FORCE),
                                     m_HP(DEFAULT_MAX_HP),
