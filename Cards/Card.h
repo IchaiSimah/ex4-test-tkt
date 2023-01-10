@@ -22,9 +22,10 @@
 */
 class Card {
 public:
-Card(const std::string name);
-virtual void applyEncounter(Player& player);
-virtual void printCard();
+Card(const std::string& name);
+~Card() = default;
+virtual void applyEncounter(Player& player) const = 0;
+virtual void printCard() const;
 protected:
 std::string m_name;
 };

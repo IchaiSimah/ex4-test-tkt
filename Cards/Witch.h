@@ -2,6 +2,7 @@
 class Witch : public BattleCard{
     public:
     Witch();
+    ~Witch() = default;
     void printCard() const override;
     void battleLose(Player& player) const override;
     const int DEFAULT_WITCH_FORCE = 11;

@@ -4,7 +4,7 @@
 class Merchant : public Card{
     public:
     Merchant();
-    ~Merchant();
+    ~Merchant()= default;
     void applyEncounter(Player &player) const override;
     const int DEFAULT_MERCHANT_HEALTH_BOOST = 1;
     const int DEFAULT_MERCHANT_FORCE_BOOST = 1;
