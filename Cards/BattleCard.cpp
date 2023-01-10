@@ -9,7 +9,7 @@ BattleCard::BattleCard(const std::string &name, const int force, const int loot,
 {}
 
 
-void BattleCard::applyEncounter(Player& player){
+void BattleCard::applyEncounter(Player& player) const{
     printCard();
     if(player.getForce() + player.getLevel() >= m_force){
         battleWin(player);
@@ -18,7 +18,7 @@ void BattleCard::applyEncounter(Player& player){
         battleLose(player);
     }
 }
-void BattleCard :: battleWin(Player& player){
+void BattleCard :: battleWin(Player& player) const{
     player.addLevel();
     player.addCoins(m_loot);
     printWinBattle(player.getName(), m_name);
