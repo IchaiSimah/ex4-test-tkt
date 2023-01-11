@@ -5,13 +5,14 @@ const int MAX_PLAYERS_SIZE = 6; //if you want to change, also chanfe in helperFu
 Mtmchkin::Mtmchkin(const std::string &fileName){
     printStartGameMessage();
     while (!validValueInsertion<int>(m_numOfActivePlayers, &validSize, 
-                            &printInvalidTeamSize, &printEnterTeamSizeMessage))
-    m_activePlayers = createPlayers(m_numOfActivePlayers);
-
+                            &printInvalidTeamSize, &printEnterTeamSizeMessage)){}
+createPlayers(m_numOfActivePlayers);
+try{createDeck()}
+catch()
 
 }
 
-std::queue<std::shared_ptr<Player>>createPlayers(int numOfPlayers){
+void createPlayers(int numOfPlayers){
     std::string nameAndRole;
     for(int i = 0; i < numOfPlayers; i++){
         printInsertPlayerMessage();
@@ -34,7 +35,7 @@ std::queue<std::shared_ptr<Player>>createPlayers(int numOfPlayers){
 }
 
 void Mtmchkin::playRound(){
-    printRoundStartMessage(m_rounds);
+    printRoundStartMessage(++m_rounds);
     for (int i = 0; i < m_numOfActivePlayers ; ++i) {
         printTurnStartMessage(m_activePlayers.front()->getName());
         m_cards.front()->applyEncounter(*m_activePlayers.front());
@@ -49,9 +50,9 @@ void Mtmchkin::playRound(){
             m_numOfActivePlayers--;
             m_winners.push(m_activePlayers.front());
             m_activePlayers.pop();
-        }
-        m_rounds++;
+        }   
     }
+
     if(isGameOver()){
         printGameEndMessage();
     }

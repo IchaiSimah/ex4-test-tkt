@@ -67,7 +67,7 @@ public:
     */
     int getNumberOfRounds() const;
     private:
-    
+
 };
 
 

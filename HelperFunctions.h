@@ -39,7 +39,7 @@ bool isValidNameAndRole(std::string& nameAndRole){
            return false;
        }
    }
-   size_t pos = nameAndRole.find_first_of(' ');
+   size_t pos = nameAndRole.find_first_of(WORD_SEPARATOR);
    std::string role = nameAndRole.substr(pos+1);
     if(role != HEALER && role != NINJA && role != WARRIOR){
         printInvalidClass();
