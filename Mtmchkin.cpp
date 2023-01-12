@@ -4,8 +4,6 @@
 #include <ostream>
 #include<fstream>
 #include<string>
-const int MIN_PLAYERS_SIZE = 2;
-const int MAX_PLAYERS_SIZE = 6; //if you want to change, also chanfe in helperFunctions.h
 Mtmchkin::Mtmchkin(const std::string &fileName){
     printStartGameMessage();
     while (!validValueInsertion<int>(m_numOfActivePlayers, &validSize, 
@@ -121,4 +119,8 @@ void  Mtmchkin :: createDeck(const std::string &filename){
    if(numOfCards < MIN_DECK_SIZE){
     throw DeckFileInvalidSize();
    }
+}
+
+bool validSize(int& size){
+    return((size >= MIN_PLAYERS_SIZE) && (size <= MAX_PLAYERS_SIZE));
 }
