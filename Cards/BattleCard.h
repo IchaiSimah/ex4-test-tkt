@@ -11,7 +11,7 @@ class BattleCard : public Card{
     ~BattleCard() = default;
     virtual void applyEncounter(Player& player) const override;
     virtual void printCard(std::ostream& os) const override;
-    virtual  void battleLose(Player& player) const;
+    virtual  void battleLose(Player& player) const = 0;
     void battleWin(Player& player) const;
     protected:
     int m_force;
