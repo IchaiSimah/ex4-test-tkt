@@ -1,4 +1,6 @@
 #include "Card.h"
+#ifndef EX4_BattleCard_H
+#define EX4_BattleCard_H
 const bool IS_NOT_DRAGON = false;
 
 class BattleCard : public Card{
@@ -14,3 +16,5 @@ class BattleCard : public Card{
     int m_loot;
     int m_damage;
 };
+
+#endif //Battle_Card_H
