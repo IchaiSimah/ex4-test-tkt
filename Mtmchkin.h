@@ -18,12 +18,6 @@
 #include <stack>
 #include <memory>
 class Mtmchkin{
-    std::queue<std::shared_ptr<Card>> m_cards;
-    std::queue<std::shared_ptr<Player>> m_activePlayers;
-    std::queue<std::shared_ptr<Player>> m_winners;
-    std::stack<std::shared_ptr<Player>> m_losers;
-    int m_rounds;
-    int m_numOfActivePlayers;
 public:
     
     /*
