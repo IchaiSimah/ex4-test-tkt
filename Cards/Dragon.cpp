@@ -1,6 +1,6 @@
 #include "Dragon.h"
 
-Dragon::Dragon(): BattleCard(DRAGON, DEFAULT_DRAGON_FORCE, DEFAULT_DRAGON_LOOT, MAX_HEALTH_POINTS)
+Dragon::Dragon(): BattleCard(DRAGON, DEFAULT_DRAGON_FORCE, DEFAULT_DRAGON_LOOT, MAX_HEALTH_POINTS_TO_REMOVE)
 {}
 
 void Dragon :: printCard(std::ostream& os) const{
