@@ -19,7 +19,7 @@ catch(const Exception& e){
 
 }
 
-void createPlayers(int numOfPlayers){
+void Mtmchkin :: createPlayers(int numOfPlayers){
     std::string nameAndRole;
     for(int i = 0; i < numOfPlayers; i++){
         printInsertPlayerMessage();
@@ -81,7 +81,7 @@ void Mtmchkin::printLeaderBoard() const{
     printPlayers(m_losers, startingRank);
 }
 
-void createDeck(const std::string &filename){
+void  Mtmchkin :: createDeck(const std::string &filename){
     std::ifstream deck(filename.c_str());
     if(!deck){
         throw DeckFileNotFound();

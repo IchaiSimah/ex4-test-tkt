@@ -75,6 +75,9 @@ public:
     int m_rounds;
     int m_numOfActivePlayers;
 
+
+void  createDeck(const std::string &filename);
+void Mtmchkin :: createPlayers(int numOfPlayers);
 };
 
 
