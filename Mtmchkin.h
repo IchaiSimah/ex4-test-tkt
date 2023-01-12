@@ -8,6 +8,7 @@
 #include "Cards/Merchant.h"
 #include "Cards/Well.h"
 #include "Cards/Witch.h"
+#include "Cards/Treasure.h"
 #include "Players/Player.h"
 #include "Players/Ninja.h"
 #include "Players/Healer.h"
@@ -73,6 +74,9 @@ public:
     std::stack<std::shared_ptr<Player>> m_losers;
     int m_rounds;
     int m_numOfActivePlayers;
+
+    void createDeck(const std::string &filename);
+    void createPlayers(int numOfPlayers);
 };
 
 

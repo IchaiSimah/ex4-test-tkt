@@ -20,6 +20,7 @@
  * BARFIGHT - a barfight occur and the player lose 10 HealthPoints except if he is a warrior
  * MANA - a card only the healer can use and gives him 20 HealthPoints
 */
+const int MIN_DECK_SIZE = 5;
 class Card {
 public:
 Card(const std::string& name);

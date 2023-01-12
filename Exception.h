@@ -17,13 +17,17 @@ protected:
 };
 
 class DeckFileNotFound : public Exception{
+public:
     DeckFileNotFound(){
         m_what = "Deck File Error: File not found";
+    }
+    const char* what()const noexcept override{
+        return m_what.c_str();
     }
 };
 
 class DeckFileFormatError : public Exception{
-public: 
+    public: 
     DeckFileFormatError(int line){
         m_what = "Deck File Error: File format error in line " + std::to_string(line);
     }
@@ -33,8 +37,12 @@ public:
 };
 
 class DeckFileInvalidSize : public Exception{
+    public:
     DeckFileInvalidSize(){
         m_what = "Deck File Error: Deck size is invalid";
+    }
+    const char* what()const noexcept override{
+        return m_what.c_str();
     }
 };
 

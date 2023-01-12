@@ -1,5 +1,9 @@
 #include "Mtmchkin.h"
 #include "HelperFunctions.h"
+#include "Exception.h"
+#include <ostream>
+#include<fstream>
+#include<string>
 const int MIN_PLAYERS_SIZE = 2;
 const int MAX_PLAYERS_SIZE = 6; //if you want to change, also chanfe in helperFunctions.h
 Mtmchkin::Mtmchkin(const std::string &fileName){
@@ -7,8 +11,11 @@ Mtmchkin::Mtmchkin(const std::string &fileName){
     while (!validValueInsertion<int>(m_numOfActivePlayers, &validSize, 
                             &printInvalidTeamSize, &printEnterTeamSizeMessage)){}
 createPlayers(m_numOfActivePlayers);
-try{createDeck()}
-catch()
+try{createDeck(fileName);}
+catch(const Exception& e){
+    std::cerr<<e.what()<<std::endl;
+}
+    
 
 }
 
@@ -72,4 +79,48 @@ void Mtmchkin::printLeaderBoard() const{
     printPlayers(m_winners, startingRank);
     printPlayers(m_activePlayers, startingRank);
     printPlayers(m_losers, startingRank);
+}
+
+void createDeck(const std::string &filename){
+    std::ifstream deck(filename.c_str());
+    if(!deck){
+        throw DeckFileNotFound();
+    }
+   std::string cardType;
+   std::shared_ptr<Card> newCard(nullptr);
+   int numOfCards = 0;
+   while(std::getline(deck, cardType)){
+    if(cardType == DRAGON){
+        newCard = std::shared_ptr<Card> (new Dragon);
+    }
+    else if(cardType == WITCH){
+        newCard = std::shared_ptr<Card> (new Witch);
+    }
+    else if(cardType == GREMLIN){
+        newCard = std::shared_ptr<Card> (new Gremlin);
+    }
+    else if(cardType == MANA){
+        newCard = std::shared_ptr<Card> (new Mana);
+    }
+    else if(cardType == BARFIGHT){
+        newCard = std::shared_ptr<Card> (new Barfight);
+    }
+    else if(cardType == WELL){
+        newCard = std::shared_ptr<Card> (new Well);
+    }
+    else if(cardType == TREASURE){
+        newCard = std::shared_ptr<Card> (new Treasure);
+    }
+    else if(cardType == MERCHANT){
+        newCard = std::shared_ptr<Card> (new Merchant);
+    }
+    else{
+        throw DeckFileFormatError(numOfCards);
+    }
+    numOfCards+=1;
+    m_cards.push(newCard);
+   }
+   if(numOfCards < MIN_DECK_SIZE){
+    throw DeckFileInvalidSize();
+   }
 }

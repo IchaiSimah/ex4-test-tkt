@@ -1,5 +1,8 @@
 #include "Card.h"
 
+const int DEFAULT_TREASURE_LOOT = 10;
+const std::string TREASURE="Treasure";
+
 
 class Treasure : public Card{
     public:
