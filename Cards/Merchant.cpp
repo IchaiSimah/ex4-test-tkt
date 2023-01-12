@@ -1,8 +1,8 @@
 #include "Merchant.h"
 
 Merchant::Merchant():Card(MERCHANT),
-                    m_ForceBoost(DEFAULT_MERCHANT_FORCE_BOOST),
-                    m_HealthBoost(DEFAULT_MERCHANT_HEALTH_BOOST)
+                    m_HealthBoost(DEFAULT_MERCHANT_HEALTH_BOOST),
+                    m_ForceBoost(DEFAULT_MERCHANT_FORCE_BOOST)
 {}
 
 void Merchant :: applyEncounter(Player &player) const{

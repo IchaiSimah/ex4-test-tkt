@@ -4,8 +4,8 @@
 
 BattleCard::BattleCard(const std::string &name, const int force, const int loot, const int damage): Card(name),
                                                                 m_force(force),
-                                                                m_damage(damage),
-                                                                m_loot(loot)
+                                                                m_loot(loot),
+                                                                m_damage(damage)
 {}
 void BattleCard:: printCard(std::ostream& os) const{
     printCardDetails(os, m_name);
