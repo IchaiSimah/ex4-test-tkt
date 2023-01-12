@@ -17,14 +17,14 @@ const char UPPER_Z ='Z';
 template <class T>
 bool validValueInsertion(T& toSet, bool(*boolFunction)(T&),
                 void(*startingMesssage)()= nullptr, void(*errorMessage)() = nullptr){
-    startingMesssage()
+    startingMesssage();
     if (std::cin >> toSet){
         if(boolFunction(toSet)){
             return true;
         }
     }
     errorMessage();
-    return false
+    return false;
 }
 
 bool validSize(int& size){

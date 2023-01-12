@@ -17,12 +17,12 @@ void Merchant :: applyEncounter(Player &player) const{
             choice =std::stoi(str);
         }
         catch(std::exception){
-            printInvalidInput;
+            printInvalidInput();
             continue;
         } 
         
         if(choice !=DO_NOTHING && choice !=CHOSE_HP && choice!=CHOSE_FORCE){
-            printInvalidInput;
+            printInvalidInput();
             continue;
         }
         validInput = true;
