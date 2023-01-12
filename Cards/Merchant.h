@@ -20,4 +20,4 @@ class Merchant : public Card{
     int m_ForceBoost;
 };
 
-#endif EX4_Merchant_H
+#endif //EX4_Merchant_H
