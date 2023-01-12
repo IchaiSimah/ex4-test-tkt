@@ -17,6 +17,8 @@
 #include <queue>
 #include <stack>
 #include <memory>
+const int MIN_PLAYERS_SIZE = 2;
+const int MAX_PLAYERS_SIZE = 6;
 class Mtmchkin{
 public:
     
