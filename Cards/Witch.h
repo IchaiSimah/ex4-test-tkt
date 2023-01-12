@@ -1,3 +1,5 @@
+#ifndef EX4_Witch_H
+#define EX4_Witch_H
 #include "BattleCard.h"
 
 const int DEFAULT_WITCH_FORCE = 11;
@@ -13,3 +15,5 @@ class Witch : public BattleCard{
     ~Witch() = default;
     void battleLose(Player& player) const override;
 };
+
+#endif // EX4_Witch_H

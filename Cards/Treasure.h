@@ -1,3 +1,5 @@
+#ifndef EX4_Treasure_H
+#define EX4_Treasure_H
 #include "Card.h"
 
 const int DEFAULT_TREASURE_LOOT = 10;
@@ -15,3 +17,5 @@ class Treasure : public Card{
 
     int m_loot;
 };
+
+#endif // EX4_Treasure_H

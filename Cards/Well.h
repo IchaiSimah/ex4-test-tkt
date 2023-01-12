@@ -1,3 +1,5 @@
+#ifndef EX4_Well_H
+#define EX4_Well_H
 #include "Card.h"
 
 const int WELL_DEFAULT_DAMAGE = 10;
@@ -13,3 +15,5 @@ class Well : public Card{
 };
 
 bool isNinja(const Player& player);
+
+#endif // EX4_Well_H

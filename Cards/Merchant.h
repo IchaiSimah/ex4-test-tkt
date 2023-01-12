@@ -1,3 +1,5 @@
+#ifndef EX4_Merchant_H
+#define EX4_Merchant_H
 #include "Card.h"
 const int DEFAULT_MERCHANT_HEALTH_BOOST = 1;
 const int DEFAULT_MERCHANT_FORCE_BOOST = 1;
@@ -17,3 +19,5 @@ class Merchant : public Card{
     int m_HealthBoost;
     int m_ForceBoost;
 };
+
+#endif EX4_Merchant_H

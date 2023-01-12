@@ -1,3 +1,5 @@
+#ifndef EX4_Mana_H
+#define EX4_Mana_H
 #include "Card.h"
 
 const int DEFAULT_HEALTH_POINTS_ADDED = 10;
@@ -12,3 +14,5 @@ class Mana : public Card{
     int m_heal;
 };
 bool isHealer(const Player &player);
+
+#endif // EX4_Mana_H

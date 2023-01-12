@@ -1,6 +1,8 @@
-#include "Card.h"
 #ifndef EX4_BattleCard_H
 #define EX4_BattleCard_H
+
+#include "Card.h"
+
 const bool IS_NOT_DRAGON = false;
 
 class BattleCard : public Card{

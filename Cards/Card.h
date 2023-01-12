@@ -1,10 +1,10 @@
+#ifndef EX4_Card_H
+#define EX4_Card_H
 #include <iostream>
 #include <string>
 #include "../Players/Player.h"
 #include "../utilities.h"
 
-#ifndef EX4_Card_H
-#define EX4_Card_H
 
 /*
  *  CardType:
