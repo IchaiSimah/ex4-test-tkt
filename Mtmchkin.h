@@ -71,7 +71,7 @@ public:
 
 
 void  createDeck(const std::string &filename);
-void Mtmchkin :: createPlayers(int numOfPlayers);
+void createPlayers(const int numOfPlayers);
 };
 
 

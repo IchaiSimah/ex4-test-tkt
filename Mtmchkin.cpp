@@ -15,11 +15,9 @@ try{createDeck(fileName);}
 catch(const Exception& e){
     std::cerr<<e.what()<<std::endl;
 }
-    
-
 }
 
-void Mtmchkin :: createPlayers(int numOfPlayers){
+void Mtmchkin :: createPlayers(const int numOfPlayers){
     std::string nameAndRole;
     for(int i = 0; i < numOfPlayers; i++){
         printInsertPlayerMessage();
