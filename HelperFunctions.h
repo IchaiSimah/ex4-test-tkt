@@ -6,8 +6,7 @@
 #include <stack>
 
 #include "Players/Player.h"
-const int MIN_PLAYERS_SIZE = 2;
-const int MAX_PLAYERS_SIZE = 6;
+
 const char WORD_SEPARATOR =' ';
 const char LOWER_A ='a';
 const char UPPER_A ='A';
@@ -30,7 +29,9 @@ bool validValueInsertion(T& toSet, bool(*boolFunction)(T&),
 bool validSize(int& size){
     return((size >= MIN_PLAYERS_SIZE) && (size <= MAX_PLAYERS_SIZE));
 }
-
+bool isLetter(char toCheck){
+    return((toCheck >= UPPER_A && toCheck <= UPPER_Z) || (toCheck >= LOWER_A && toCheck <= LOWER_Z));
+}
 bool isValidNameAndRole(std::string& nameAndRole){
        int index = 0;
    while (nameAndRole[index]!= WORD_SEPARATOR) {
@@ -48,9 +49,6 @@ bool isValidNameAndRole(std::string& nameAndRole){
     return true;
 }
 
-bool isLetter(char toCheck){
-    return((toCheck >= UPPER_A && toCheck <= UPPER_Z) || (toCheck >= LOWER_A && toCheck <= LOWER_Z));
-}
 
 void printPlayers(std::queue<std::shared_ptr<Player>> queueToPrint, int &startingRank){
     while (!queueToPrint.empty()){
