@@ -74,6 +74,7 @@ void  createDeck(const std::string &filename);
 void createPlayers(const int numOfPlayers);
 };
 
-
+bool validSize(int& size);
+bool getValidSize(int& size);
 
 #endif /* MTMCHKIN_H_ */

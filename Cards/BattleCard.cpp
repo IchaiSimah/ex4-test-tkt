@@ -26,3 +26,7 @@ void BattleCard :: battleWin(Player& player) const{
     player.addCoins(m_loot);
     printWinBattle(player.getName(), m_name);
 }
+void BattleCard :: battleLose(Player &player) const{
+    player.removeHp(m_damage);
+    printLossBattle(player.getName(), m_name);
+}

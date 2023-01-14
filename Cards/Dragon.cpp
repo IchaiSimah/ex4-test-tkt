@@ -8,8 +8,3 @@ void Dragon :: printCard(std::ostream& os) const{
     printMonsterDetails(os, m_force, m_damage, m_loot, ISDRAGON);
     printEndOfCardDetails(os);
 }
-
-void Dragon :: battleLose(Player &player) const{
-    player.removeHp(m_damage);
-    printLossBattle(player.getName(), m_name);
-}

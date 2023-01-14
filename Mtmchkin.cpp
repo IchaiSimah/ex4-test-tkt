@@ -6,22 +6,27 @@
 #include<string>
 const int MIN_PLAYERS_SIZE = 2;
 const int MAX_PLAYERS_SIZE = 6; //if you want to change, also chanfe in helperFunctions.h
-Mtmchkin::Mtmchkin(const std::string &fileName){
+Mtmchkin::Mtmchkin(const std::string &fileName):m_rounds(0) {
+    try{createDeck(fileName);}
+    catch(const Exception& e){
+        std::cerr<<e.what()<<std::endl;
+    }
     printStartGameMessage();
-    while (!validValueInsertion<int>(m_numOfActivePlayers, &validSize, 
-                            &printInvalidTeamSize, &printEnterTeamSizeMessage)){}
-createPlayers(m_numOfActivePlayers);
-try{createDeck(fileName);}
-catch(const Exception& e){
-    std::cerr<<e.what()<<std::endl;
-}
+    while (!getValidSize(m_numOfActivePlayers)) {
+        printInvalidTeamSize();
+    }
+    createPlayers(m_numOfActivePlayers);
 }
 
 void Mtmchkin :: createPlayers(const int numOfPlayers){
-    std::string nameAndRole;
+
     for(int i = 0; i < numOfPlayers; i++){
         printInsertPlayerMessage();
-        while (!validValueInsertion<std::string>(nameAndRole, &isValidNameAndRole));
+        std::string nameAndRole;
+        do {
+            std::getline(std::cin, nameAndRole);
+        }
+        while (!isValidNameAndRole(nameAndRole));
         size_t pos = nameAndRole.find_first_of(' ');
         std::string name = nameAndRole.substr(0, pos); 
         std::string role = nameAndRole.substr(pos+1);
@@ -29,10 +34,10 @@ void Mtmchkin :: createPlayers(const int numOfPlayers){
         if (role == NINJA){
             newPlayer = std::shared_ptr<Player> (new Ninja (name));
         }
-        if (role == HEALER){
+        else if (role == HEALER){
             newPlayer = std::shared_ptr<Player>(new Healer (name));
         }
-        if (role == WARRIOR){
+        else if (role == WARRIOR){
             newPlayer = std::shared_ptr<Player>(new Warrior (name));
         }
         m_activePlayers.push(newPlayer);
@@ -41,22 +46,24 @@ void Mtmchkin :: createPlayers(const int numOfPlayers){
 
 void Mtmchkin::playRound(){
     printRoundStartMessage(++m_rounds);
+    int removedPlayers = 0;
     for (int i = 0; i < m_numOfActivePlayers ; ++i) {
         printTurnStartMessage(m_activePlayers.front()->getName());
         m_cards.front()->applyEncounter(*m_activePlayers.front());
         m_cards.push(m_cards.front());
         m_cards.pop();
         if(m_activePlayers.front()->isKnockedOut()){
-            m_numOfActivePlayers--;
+            removedPlayers++;
             m_losers.push(m_activePlayers.front());
             m_activePlayers.pop();
         }
-        if(m_activePlayers.front()->win()){
-            m_numOfActivePlayers--;
+        else if(m_activePlayers.front()->win()){
+            removedPlayers++;
             m_winners.push(m_activePlayers.front());
             m_activePlayers.pop();
         }   
     }
+    m_numOfActivePlayers -= removedPlayers;
 
     if(isGameOver()){
         printGameEndMessage();
@@ -79,7 +86,7 @@ void Mtmchkin::printLeaderBoard() const{
     printPlayers(m_losers, startingRank);
 }
 
-void  Mtmchkin :: createDeck(const std::string &filename){
+void  Mtmchkin::createDeck(const std::string &filename){
     std::ifstream deck(filename.c_str());
     if(!deck){
         throw DeckFileNotFound();
@@ -121,4 +128,21 @@ void  Mtmchkin :: createDeck(const std::string &filename){
    if(numOfCards < MIN_DECK_SIZE){
     throw DeckFileInvalidSize();
    }
+}
+bool validSize(int& size){
+    return((size >= MIN_PLAYERS_SIZE) && (size <= MAX_PLAYERS_SIZE));
+}
+bool getValidSize(int& size){
+    std::string tmpString;
+    std::getline(std::cin,tmpString);
+    if(tmpString.length()!=1) {
+        return false;
+    }
+    try {
+        size = stoi(tmpString);
+    }
+    catch (std::exception& e){
+        return false;
+    }
+    return validSize(size);
 }

@@ -13,7 +13,6 @@ class Dragon : public BattleCard{
     Dragon();
     ~Dragon() = default;
     void printCard(std::ostream& os) const override;
-    void battleLose(Player& player) const override;
 };
 
 #endif // EX4_Dragon_H

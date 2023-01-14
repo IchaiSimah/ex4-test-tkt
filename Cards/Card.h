@@ -28,8 +28,9 @@ Card(const std::string& name);
 virtual void applyEncounter(Player& player) const = 0;
 virtual void printCard(std::ostream& os) const;
 protected:
-std::string m_name;
+    friend std::ostream& operator<<(std::ostream& os,  const Card& card);
+    std::string m_name;
 };
-std::ostream& operator<<(const std::ostream& os, const Card& card);
+
 
 #endif //EX4_Card_H

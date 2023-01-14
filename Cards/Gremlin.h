@@ -10,7 +10,6 @@ class Gremlin : public BattleCard{
     public:
     Gremlin();
     ~Gremlin()=default;
-    void battleLose(Player& player) const override;
     private:
 };
 
