@@ -1,16 +1,11 @@
 #include "Mtmchkin.h"
-#include "HelperFunctions.h"
-#include "Exception.h"
 #include <ostream>
 #include<fstream>
 #include<string>
 
 Mtmchkin::Mtmchkin(const std::string &fileName):m_rounds(0) {
-    try{createDeck(fileName);}
-    catch(const Exception& e){
-        std::cerr<<e.what()<<std::endl;
-    }
     printStartGameMessage();
+    createDeck(fileName);
     while (!getValidSize(m_numOfActivePlayers)) {
         printInvalidTeamSize();
     }

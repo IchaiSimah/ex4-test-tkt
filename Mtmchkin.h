@@ -1,5 +1,7 @@
 #ifndef MTMCHKIN_H_
 #define MTMCHKIN_H_
+#include "HelperFunctions.h"
+#include "Exception.h"
 #include "Cards/Card.h"
 #include "Cards/Barfight.h"
 #include "Cards/Dragon.h"
