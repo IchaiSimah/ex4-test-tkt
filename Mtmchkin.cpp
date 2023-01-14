@@ -4,8 +4,7 @@
 #include <ostream>
 #include<fstream>
 #include<string>
-const int MIN_PLAYERS_SIZE = 2;
-const int MAX_PLAYERS_SIZE = 6; //if you want to change, also chanfe in helperFunctions.h
+
 Mtmchkin::Mtmchkin(const std::string &fileName):m_rounds(0) {
     try{createDeck(fileName);}
     catch(const Exception& e){
