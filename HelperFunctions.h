@@ -1,5 +1,6 @@
 #ifndef HELPER_FUNCTIONS_H_
 #define HELPER_FUNCTIONS_H_
+
 #include <iostream>
 #include <string>
 #include <queue>
@@ -14,15 +15,6 @@ const char UPPER_A ='A';
 const char LOWER_Z ='z';
 const char UPPER_Z ='Z';
 
-template <class T>
-bool validValueInsertion(T& toSet, bool(*boolFunction)(T&)){
-    if (std::cin >> toSet){
-        if(boolFunction(toSet)){
-            return true;
-        }
-    }
-    return false;
-}
 
 
 
