@@ -31,7 +31,7 @@ public:
     * @return
     *      A new instance of Mtmchkin.
     */
-    explicit Mtmchkin(std::string &fileName);
+    explicit Mtmchkin(const std::string &fileName);
     
     /*
     * Play the next Round of the game - according to the instruction in the exercise document.
