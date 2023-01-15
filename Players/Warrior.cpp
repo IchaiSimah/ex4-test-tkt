@@ -9,5 +9,5 @@ int Warrior::getForce() const{
 }
 
 void Warrior::printPlayerInfo(std::ostream& os) const{
-    printPlayerDetails(os, getName(), WARRIOR, getLevel(), getForce(), getHp(), getCoins());
+    printPlayerDetails(os, getName(), WARRIOR, getLevel(), m_force, getHp(), getCoins());
 }
