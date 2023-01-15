@@ -11,6 +11,7 @@ const char UPPER_Z ='Z';
 Mtmchkin::Mtmchkin(const std::string &fileName):m_rounds(0) {
     printStartGameMessage();
     createDeck(fileName);
+    printEnterTeamSizeMessage();
     while (!getValidSize(m_numOfActivePlayers)) {
         printInvalidTeamSize();
     }
