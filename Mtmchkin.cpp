@@ -90,9 +90,8 @@ void Mtmchkin::printLeaderBoard() const{
     printPlayers(m_losers, startingRank);
 }
 
-void  Mtmchkin::createDeck(std::string &filename){
-    std::ifstream deck;
-    deck.open(filename);
+void  Mtmchkin::createDeck(const std::string &filename){
+    std::ifstream deck(filename);
     if(!deck.is_open()){
         throw DeckFileNotFound();
     }
