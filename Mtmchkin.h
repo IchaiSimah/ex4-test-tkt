@@ -74,7 +74,7 @@ public:
     int m_numOfActivePlayers;
 
 
-void  createDeck(const std::string &filename);
+void createDeck(const std::string &filename);
 void createPlayers(const int numOfPlayers);
 };
 
