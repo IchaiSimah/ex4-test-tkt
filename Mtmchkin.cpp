@@ -91,7 +91,7 @@ void Mtmchkin::printLeaderBoard() const{
 }
 
 void  Mtmchkin::createDeck(const std::string &filename){
-    std::ifstream deck(filename.c_str());
+    std::ifstream deck(filename);
     if(!deck){
         throw DeckFileNotFound();
     }
