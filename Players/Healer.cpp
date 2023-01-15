@@ -6,7 +6,7 @@ Healer::Healer(const std::string &playerName): Player(playerName){}
 
 void Healer::addHp(int hpToAdd){
         if(hpToAdd > 0){
-            m_coins += (DOUBLE_HEAL * hpToAdd);
+            m_HP += (DOUBLE_HEAL * hpToAdd);
         }
     }
     void Healer::printPlayerInfo(std::ostream& os) const{
