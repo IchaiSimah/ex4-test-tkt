@@ -8,7 +8,7 @@ const std::string WARRIOR = "Warrior";
 const int DEFAULT_STARTING_LEVEL = 1;
 const int DEFAULT_STARTING_FORCE = 5;
 const int DEFAULT_MAX_HP = 100;
-const int DEFAULT_STARTING_COINS = 0;
+const int DEFAULT_STARTING_COINS = 10;
 const int MAX_LEVEL = 10;
 
 class Player{
