@@ -8,7 +8,7 @@ const char UPPER_A ='A';
 const char LOWER_Z ='z';
 const char UPPER_Z ='Z';
 
-Mtmchkin::Mtmchkin(const std::string &fileName):m_rounds(0) {
+Mtmchkin::Mtmchkin(std::string &fileName):m_rounds(0) {
     printStartGameMessage();
     createDeck(fileName);
     printEnterTeamSizeMessage();
@@ -90,7 +90,7 @@ void Mtmchkin::printLeaderBoard() const{
     printPlayers(m_losers, startingRank);
 }
 
-void  Mtmchkin::createDeck(const std::string &filename){
+void  Mtmchkin::createDeck(std::string &filename){
     std::ifstream deck;
     deck.open(filename);
     if(!deck.is_open()){

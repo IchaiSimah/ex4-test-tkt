@@ -31,7 +31,7 @@ public:
     * @return
     *      A new instance of Mtmchkin.
     */
-    explicit Mtmchkin(const std::string &fileName);
+    explicit Mtmchkin(std::string &fileName);
     
     /*
     * Play the next Round of the game - according to the instruction in the exercise document.
@@ -74,7 +74,7 @@ public:
     int m_numOfActivePlayers;
 
 
-void createDeck(const std::string &filename);
+void createDeck(std::string &filename);
 void createPlayers(const int numOfPlayers);
 };
 
