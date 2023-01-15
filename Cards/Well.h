@@ -1,7 +1,7 @@
 #ifndef EX4_Well_H
 #define EX4_Well_H
 #include "Card.h"
-#include "../players/Ninja.h"
+#include "../Players/Ninja.h"
 
 const int WELL_DEFAULT_DAMAGE = 10;
 const std::string WELL="Well";
