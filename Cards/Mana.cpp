@@ -8,10 +8,9 @@ Mana :: Mana():Card(MANA),
 void Mana :: applyEncounter(Player& player) const {
     Healer* tmpPtr = dynamic_cast<Healer*>(&player);
     bool isHealer = (tmpPtr != nullptr);
-    if (player.getHp() < DEFAULT_MAX_HP) {
-        if (isHealer) {
-            player.addHp(m_heal);
-        }
-        printManaMessage(isHealer);
+    if (isHealer) {
+        player.addHp(m_heal);
     }
+    printManaMessage(isHealer);
 }
+
