@@ -1,10 +1,9 @@
 #include "Treasure.h"
 
-Treasure :: Treasure():Card(TREASURE),
-                        m_loot(DEFAULT_TREASURE_LOOT)
+Treasure :: Treasure():Card(TREASURE)
 {}
 
 void Treasure :: applyEncounter(Player& player)const {
-    player.addCoins(m_loot);
+    player.addCoins(DEFAULT_TREASURE_LOOT);
     printTreasureMessage();
 }

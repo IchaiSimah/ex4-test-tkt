@@ -1,12 +1,11 @@
 #include "Well.h"
 
-Well :: Well():Card(WELL),
-                m_damage(WELL_DEFAULT_DAMAGE)
+Well :: Well():Card(WELL)
 {}
 
 void Well :: applyEncounter(Player& player) const {
     if( !isNinja(player) ){
-        player.removeHp(m_damage);
+        player.removeHp(WELL_DEFAULT_DAMAGE);
     }
     printWellMessage(isNinja(player));
 }

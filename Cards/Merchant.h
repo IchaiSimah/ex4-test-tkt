@@ -15,9 +15,6 @@ class Merchant : public Card{
     Merchant();
     ~Merchant()= default;
     void applyEncounter(Player &player) const override;
-    private: 
-    int m_HealthBoost;
-    int m_ForceBoost;
 };
 
 #endif //EX4_Merchant_H

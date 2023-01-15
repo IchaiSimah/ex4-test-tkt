@@ -10,8 +10,6 @@ class Well : public Card{
     Well();
     ~Well() = default;
     void applyEncounter(Player &player) const override;
-    private: 
-    int m_damage;
 };
 
 bool isNinja(const Player& player);

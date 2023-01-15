@@ -10,7 +10,6 @@ class Gremlin : public BattleCard{
     public:
     Gremlin();
     ~Gremlin()=default;
-    private:
 };
 
 #endif // EX4_Gremlin_H

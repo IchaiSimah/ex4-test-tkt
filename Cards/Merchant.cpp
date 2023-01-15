@@ -1,8 +1,6 @@
 #include "Merchant.h"
 
-Merchant::Merchant():Card(MERCHANT),
-                    m_HealthBoost(DEFAULT_MERCHANT_HEALTH_BOOST),
-                    m_ForceBoost(DEFAULT_MERCHANT_FORCE_BOOST)
+Merchant::Merchant():Card(MERCHANT)
 {}
 
 void Merchant :: applyEncounter(Player &player) const{
@@ -29,7 +27,7 @@ void Merchant :: applyEncounter(Player &player) const{
     }
     if(choice==CHOSE_HP){                       //TO_CHECK
         if(player.pay(PRICE_FOR_HP)){
-            player.addHp(m_HealthBoost);
+            player.addHp(DEFAULT_MERCHANT_HEALTH_BOOST);
             cost = PRICE_FOR_HP;
         }
         else{
@@ -39,7 +37,7 @@ void Merchant :: applyEncounter(Player &player) const{
     }
     else if(choice==CHOSE_FORCE){
         if(player.pay(PRICE_FOR_FORCE)){
-            player.addForce(m_ForceBoost);
+            player.addForce(DEFAULT_MERCHANT_FORCE_BOOST);
             cost=PRICE_FOR_FORCE;
         }
         else{

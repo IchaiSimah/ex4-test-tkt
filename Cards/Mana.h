@@ -11,8 +11,6 @@ class Mana : public Card{
     Mana();
     ~Mana() = default;
     void applyEncounter(Player& player) const override;
-    private:
-    int m_heal;
 };
 
 #endif // EX4_Mana_H

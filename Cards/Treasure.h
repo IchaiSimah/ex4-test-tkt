@@ -11,8 +11,6 @@ class Treasure : public Card{
     Treasure();
     ~Treasure() = default;
     void applyEncounter(Player& player) const override;
-    private:
-    int m_loot;
 };
 
 #endif // EX4_Treasure_H
