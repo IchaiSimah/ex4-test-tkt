@@ -170,14 +170,14 @@ bool isLetter(char toCheck){
 
 void printPlayers(std::queue<std::shared_ptr<Player>> queueToPrint, int &startingRank){
     while (!queueToPrint.empty()){
-        printPlayerLeaderBoard(startingRank++, *(queueToPrint.front()));
+        printPlayerLeaderBoard(++startingRank, *(queueToPrint.front()));
         queueToPrint.pop();
     }
 }
 
 void printPlayers(std::stack<std::shared_ptr<Player>> stackToPrint, int &startingRank){
     while (!stackToPrint.empty()){
-        printPlayerLeaderBoard(startingRank++, *(stackToPrint.top()));
+        printPlayerLeaderBoard(++startingRank, *(stackToPrint.top()));
         stackToPrint.pop();
     }
 }
