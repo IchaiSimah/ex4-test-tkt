@@ -61,7 +61,11 @@ void Mtmchkin::playRound(){
             removedPlayers++;
             m_winners.push(m_activePlayers.front());
             m_activePlayers.pop();
-        }   
+        }
+        else{
+            m_activePlayers.push(m_activePlayers.front());
+            m_activePlayers.pop();
+        }
     }
     m_numOfActivePlayers -= removedPlayers;
 
