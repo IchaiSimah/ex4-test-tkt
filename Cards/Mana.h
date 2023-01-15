@@ -1,7 +1,7 @@
 #ifndef EX4_Mana_H
 #define EX4_Mana_H
 #include "Card.h"
-#include "Healer.h"
+#include "../Players/Healer.h"
 
 const int DEFAULT_HEALTH_POINTS_ADDED = 10;
 const std::string MANA="Mana";
