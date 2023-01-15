@@ -12,6 +12,10 @@ void Mana :: applyEncounter(Player& player) const {
         }
         printManaMessage(isHealer(player));
     }
+    else
+    {
+        printManaMessage(false);
+    }
 }
 
 bool isHealer(const Player& player){
