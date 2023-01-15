@@ -91,8 +91,8 @@ void Mtmchkin::printLeaderBoard() const{
 }
 
 void  Mtmchkin::createDeck(const std::string &filename){
-    std::ifstream deck(filename);
-    if(!deck.is_open()){
+    std::ifstream deck (filename.c_str());
+    if(!deck){
         throw DeckFileNotFound();
     }
    std::string cardType;
