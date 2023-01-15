@@ -124,9 +124,9 @@ void  Mtmchkin::createDeck(const std::string &filename){
         newCard = std::shared_ptr<Card> (new Merchant);
     }
     else{
-        throw DeckFileFormatError(numOfCards);
+        throw DeckFileFormatError(numOfCards+1);
     }
-    numOfCards+=1;
+    numOfCards++;
     m_cards.push(newCard);
    }
    if(numOfCards < MIN_DECK_SIZE){
