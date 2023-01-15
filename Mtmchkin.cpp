@@ -96,9 +96,9 @@ void  Mtmchkin::createDeck(const std::string &filename){
         throw DeckFileNotFound();
     }
    std::string cardType;
-   std::shared_ptr<Card> newCard(nullptr);
    int numOfCards = 0;
    while(std::getline(deck, cardType)){
+    std::shared_ptr<Card> newCard(nullptr);
     if(cardType == DRAGON){
         newCard = std::shared_ptr<Card> (new Dragon);
     }
