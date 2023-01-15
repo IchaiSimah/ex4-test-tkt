@@ -82,4 +82,12 @@ void createPlayers(const int numOfPlayers);
 bool validSize(int& size);
 bool getValidSize(int& size);
 
+bool isValidNameAndRole(std::string& nameAndRole);
+
+bool isLetter(char toCheck);
+
+void printPlayers(std::queue<std::shared_ptr<Player>> queueToPrint, int &startingRank);
+
+void printPlayers(std::stack<std::shared_ptr<Player>> stackToPrint, int &startingRank);
+
 #endif /* MTMCHKIN_H_ */
